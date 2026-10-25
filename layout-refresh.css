@@ -373,6 +373,26 @@ html[data-theme="dark"] .contract-feature { border-left-color: #89ab66; }
   .project-story h3 { font-size: 31px; }
   .contact-details { padding: 22px; }
 }
+/* Keep the reference photo-and-copy arrangement on desktop as well. */
+@media (min-width: 901px) {
+  .hero-photo {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    grid-template-rows: minmax(320px, auto) auto;
+  }
+  .hero-photo > img { grid-column: 1; grid-row: 1; min-height: 320px; }
+  .hero-photo .photo-copy {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    padding: clamp(20px, 2vw, 30px);
+    border-top: 0;
+  }
+  .hero-photo .photo-copy h2 { font-size: clamp(26px, 2.1vw, 32px); margin-block: 17px 26px; }
+  .hero-photo .photo-copy .button { font-size: 12px; padding: 14px 13px; gap: 10px; min-height: 50px; }
+  .hero-photo .photo-copy .button svg { flex-shrink: 0; }
+  .hero-photo .photo-caption { grid-column: 1; grid-row: 2; padding: 18px 20px; }
+  .hero-photo .photo-index { grid-column: 2; grid-row: 2; justify-content: flex-end; padding: 18px 23px; }
+}
 @media (prefers-reduced-motion: reduce) {
   .capability, .capability img, .insight-card { transition: none; }
 }
