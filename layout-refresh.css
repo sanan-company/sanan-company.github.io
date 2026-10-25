@@ -224,6 +224,25 @@ html[data-theme="dark"] .hero-bottom > a { border-color: #55785b; }
 .capability-5 .capability-photo > img { object-fit: contain; }
 .capability-source { grid-column: 1; grid-row: 4; min-width: 0; }
 .capability-source .photo-credit { padding: 10px 13px; font-size: 10px; }
+.capability-video {
+  grid-column: 1 / -1;
+  grid-row: 5;
+  min-width: 0;
+  padding: 18px;
+  border-top: 1px solid var(--editorial-border);
+  background: var(--editorial-surface);
+  scroll-margin-top: 190px;
+}
+.capability-video .eyebrow { display: block; margin-bottom: 14px; font-size: 10px; }
+.capability-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  background: #111d19;
+  border-radius: 3px;
+}
 
 /* Project-led presentation with a distinct story column. */
 .tiu-feature { grid-template-columns: .88fr 1.12fr; border-radius: 3px; }
