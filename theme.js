@@ -2,8 +2,8 @@
 (() => {
   'use strict';
 
-  const storageKey = 'sanan-color-theme';
-  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+  // Start existing visitors on the new dark default as well.
+  const storageKey = 'sanan-color-theme-v2';
   const validTheme = (value) => value === 'light' || value === 'dark';
   let preference = null;
   let controls = [];
@@ -16,7 +16,7 @@
   }
 
   function applyTheme() {
-    const theme = preference || (systemTheme.matches ? 'dark' : 'light');
+    const theme = preference || 'dark';
     document.documentElement.dataset.theme = theme;
     const browserColor = document.querySelector('meta[name="theme-color"]');
     if (browserColor) browserColor.content = theme === 'dark' ? '#111d19' : '#f6f7f2';
@@ -73,9 +73,6 @@
     observer.observe(document.documentElement, { childList: true, subtree: true });
   }
 
-  systemTheme.addEventListener('change', () => {
-    if (!preference) applyTheme();
-  });
   window.addEventListener('storage', (event) => {
     if (event.key !== storageKey && event.key !== null) return;
     preference = validTheme(event.newValue) ? event.newValue : null;
