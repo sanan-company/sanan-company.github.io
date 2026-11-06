@@ -508,7 +508,8 @@ footer > a:last-of-type { display:flex; align-items:center; gap:13px; font-size:
 }
 
 /* Final contrast and status refinements. */
-html[data-theme="dark"] .brand .official-logo { filter:brightness(1.55) saturate(.65); }
+/* Match the dark logo to the sage button fill (#9cbea6), preserving its shape and transparency. */
+html[data-theme="dark"] .brand .official-logo { filter:brightness(0) invert(66.640%) sepia(32.373%) saturate(172.168%) hue-rotate(84.986deg) brightness(99.593%); }
 .ongoing-status { display:flex; align-items:center; gap:10px; color:var(--accent); font-size:10px; font-weight:600; letter-spacing:.1em; }
 .ongoing-status i { display:block; width:6px; height:6px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 5px var(--glow); }
 @media(max-width:1000px) {
