@@ -517,3 +517,35 @@ html[data-theme="dark"] .brand .official-logo { filter:brightness(0) invert(66.6
  header nav { top:124px; max-height:calc(100dvh - 124px); }
  .theme-choice { min-height:44px; }
 }
+
+/* Focused service additions, using the same cards, colors and typography. */
+.expertise-services-block { margin-top:56px; scroll-margin-top:var(--section-scroll-offset,108px); }
+.expertise-services-heading { display:flex; justify-content:space-between; align-items:center; gap:28px; border-top:1px solid var(--line); padding-top:28px; margin-bottom:26px; }
+.expertise-services-heading > p { max-width:490px; color:var(--muted); font-size:14px; }
+.capability-service { display:flex; flex-direction:column; }
+.service-photograph { position:relative; background:var(--surface-2); }
+.service-photograph > img { width:100%; height:auto; aspect-ratio:16/10; object-fit:cover; }
+.service-number { position:absolute; left:18px; top:18px; display:grid; place-items:center; width:36px; height:36px; border:1px solid var(--line); border-radius:50%; background:var(--surface); color:var(--accent); font-size:11px; font-weight:600; }
+.service-photograph > figcaption { padding:12px 24px; border-block:1px solid var(--line); color:var(--muted); background:var(--surface-2); font-size:11px; }
+.capability-service .capability-content { align-self:stretch; flex:1; padding:28px; }
+.capability-service .capability-content h3 { font-size:28px; }
+.capability-service .capability-content > p { font-size:15px; }
+.service-photo-credit { display:flex; flex-wrap:wrap; justify-content:space-between; gap:4px 14px; margin:0 28px; padding:14px 0 18px; border-top:1px solid var(--line); color:var(--muted); font-size:10px; line-height:1.8; }
+.service-photo-credit a { text-decoration:underline; text-underline-offset:3px; }
+.service-photo-credit a:hover { color:var(--accent); }
+.service-credit-link { display:inline-flex; align-items:center; min-height:44px; margin-top:16px; color:var(--muted); font-size:12px; text-decoration:underline; text-underline-offset:4px; }
+.service-credit-link:hover { color:var(--accent); }
+.service-bus-duct .service-photograph > img { object-fit:contain; }
+.service-installation .service-photograph > img { object-position:50% 70%; }
+@media (min-width:761px) and (max-width:1000px) {
+  .expertise-services { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .capability-service .capability-content { padding:24px; }
+  .capability-service .capability-content h3 { font-size:25px; }
+  .service-photo-credit { margin-inline:24px; }
+}
+@media (max-width:760px) {
+  .expertise-services-heading { display:block; }
+  .expertise-services-heading > p { margin-top:14px; }
+  .capability-service .capability-content { padding:26px; }
+  .service-photo-credit { margin-inline:26px; }
+}
