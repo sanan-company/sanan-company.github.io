@@ -112,3 +112,38 @@ export function renderExpertiseServices(runtime, asset) {
     ]
   });
 }
+
+// Direct links can arrive before React has mounted these new cards.
+// Restore only an initial link to this addition, without interrupting user input.
+function restoreInitialExpertiseLink() {
+  const initialHash = window.location.hash;
+  const targetId = initialHash.slice(1);
+  const knownIds = ['expertise-systems', ...expertiseServices.map(service => `service-${service.id}`)];
+  if (!knownIds.includes(targetId)) return;
+
+  let interrupted = false;
+  const inputEvents = ['wheel', 'touchstart', 'pointerdown', 'keydown'];
+  const interrupt = () => { interrupted = true; };
+  const cleanUp = () => inputEvents.forEach(type => window.removeEventListener(type, interrupt, true));
+  inputEvents.forEach(type => window.addEventListener(type, interrupt, { passive: true, capture: true }));
+
+  const observer = new MutationObserver(alignWhenReady);
+  function alignWhenReady() {
+    const target = document.getElementById(targetId);
+    if (!target) return false;
+    observer.disconnect();
+    requestAnimationFrame(async () => {
+      if (document.fonts) await document.fonts.ready;
+      if (!interrupted && window.location.hash === initialHash) {
+        const headerHeight = document.querySelector('header')?.offsetHeight || 0;
+        const top = target.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+      }
+      cleanUp();
+    });
+    return true;
+  }
+  if (!alignWhenReady()) observer.observe(document.documentElement, { childList: true, subtree: true });
+}
+
+restoreInitialExpertiseLink();
