@@ -19,7 +19,7 @@
     const theme = preference || 'dark';
     document.documentElement.dataset.theme = theme;
     const browserColor = document.querySelector('meta[name="theme-color"]');
-    if (browserColor) browserColor.content = theme === 'dark' ? '#111d19' : '#f6f7f2';
+    if (browserColor) browserColor.content = theme === 'dark' ? '#0b1b2e' : '#f1efe9';
     controls.forEach((control) => {
       control.setAttribute('aria-pressed', String(control.dataset.themeChoice === theme));
     });
