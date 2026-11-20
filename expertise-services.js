@@ -5,8 +5,8 @@ export const expertiseServices = [
     text: 'Low-current systems for building communications, security and fire detection, including CCTV, structured networks, television distribution and dedicated fire-alarm equipment.',
     details: ['CCTV surveillance', 'Data networks & TV distribution', 'Fire detection & alarm systems'],
     image: 'expertise-low-current-v2.webp', width: 1536, height: 1024,
-    alt: 'Low-current systems with CCTV cameras, a fire alarm panel, satellite television distribution equipment and an organized network rack',
-    caption: 'CCTV, fire alarm, satellite & networks', generatedIllustration: true
+    alt: 'Low-current systems with CCTV cameras, a fire alarm panel, a ceiling-mounted smoke detector with conduit and an organized network rack',
+    caption: 'CCTV, fire alarm & network systems', generatedIllustration: true
   },
   {
     id: 'lv', title: 'Low-voltage (LV) systems', tag: 'BUILDING POWER DISTRIBUTION',
