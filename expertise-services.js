@@ -31,11 +31,9 @@ export const expertiseServices = [
     id: 'bus-duct', title: 'Bus duct systems', tag: 'ENCLOSED BUSBAR TRUNKING',
     text: 'Enclosed bus duct systems distribute power between electrical equipment and building loads, with connected trunking sections, supported routes and tap-off units matched to the installation.',
     details: ['Busway sections & joints', 'Tap-off units & connections', 'Supports & route installation'],
-    image: 'expertise-bus-duct.webp', width: 1280, height: 852,
-    alt: 'Physical bus duct section showing insulated phase and neutral conductors within its metal housing',
-    caption: 'Bus duct construction detail', credit: 'Izma94', license: 'CC BY-SA 4.0',
-    source: 'https://commons.wikimedia.org/wiki/File:%D0%A8%D0%B8%D0%BD%D0%BE%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4.jpg',
-    licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/'
+    image: 'expertise-bus-duct-v2.webp', width: 1536, height: 1024,
+    alt: 'Enclosed metal busduct route with bolted joints, ceiling supports and a vertical connection to switchgear',
+    caption: 'Enclosed busduct installation', generatedIllustration: true
   },
   {
     id: 'light-poles', title: 'Light poles', tag: 'OUTDOOR LIGHTING INFRASTRUCTURE',
@@ -104,7 +102,7 @@ export function renderExpertiseServices(runtime, asset) {
                 ' · ',
                 jsx('a', { href: service.licenseUrl, target: '_blank', rel: 'noopener noreferrer', children: service.license })
               ] })
-            ] }) : jsx('div', { className: 'service-photo-credit', children: jsx('span', { children: 'Real photograph / in the field' }) })
+            ] }) : jsx('div', { className: 'service-photo-credit', children: jsx('span', { children: service.generatedIllustration ? 'AI-generated illustration' : 'Real photograph / in the field' }) })
           ]
         }, service.id)
       ) }),
