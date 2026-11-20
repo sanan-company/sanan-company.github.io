@@ -26,6 +26,38 @@ export const expertiseServices = [
     caption: 'Installed MV switchgear', existingPhoto: true
   },
   {
+    id: 'mv-underground', title: 'MV Underground Cable Installation', tag: 'UNDERGROUND POWER INFRASTRUCTURE',
+    text: 'Medium-voltage underground cable installation, from laying cables along prepared routes to protective covers, warning tape and connection preparation.',
+    details: ['Cable laying & route installation', 'Protective covers & warning tape', 'Connection preparation'],
+    image: 'mv-underground-warning.webp', width: 720, height: 1280,
+    alt: 'Underground electrical cable route protected with red warning tape in a prepared trench',
+    caption: 'MV underground cable installation', existingPhoto: true,
+    gallery: [
+      { image: 'mv-underground-cables.webp', alt: 'Three red power cables laid along an open trench', caption: 'Cable route installation' },
+      { image: 'mv-underground-covers.webp', alt: 'Protective covers placed over an underground cable route', caption: 'Cable protection covers' }
+    ]
+  },
+  {
+    id: 'h-pole-transformer', title: 'H-Pole Transformer', tag: 'POLE-MOUNTED DISTRIBUTION',
+    text: 'Transformer installation on H-pole structures, with support steelwork, electrical connections and associated distribution equipment.',
+    details: ['H-pole transformer mounting', 'MV & LV connections', 'Distribution equipment installation'],
+    image: 'h-pole-transformer.webp', width: 960, height: 1280,
+    alt: 'Distribution transformer mounted between two concrete poles with switchgear and cable connections',
+    caption: 'H-pole transformer installation', existingPhoto: true
+  },
+  {
+    id: 'transformer-installation', title: 'Transformer Installation', tag: 'INSTALLATION, CONNECTION & TESTING',
+    text: 'Transformer installation and electrical connections, supported by cable-route work and site testing during preparation for service.',
+    details: ['Transformer installation & connections', 'Associated cable-route work', 'Electrical testing'],
+    image: 'transformer-installation.webp', width: 960, height: 1280,
+    alt: 'Transformer installation with power cable terminations and portable electrical test equipment',
+    caption: 'Transformer installation & connection work', existingPhoto: true,
+    gallery: [
+      { image: 'transformer-cable-route.webp', alt: 'Workers laying black power cables along a trench for electrical connections', caption: 'Cable installation for transformer connections' },
+      { image: 'transformer-testing.webp', alt: 'Portable insulation-test instrument connected to a transformer', caption: 'Transformer electrical testing' }
+    ]
+  },
+  {
     id: 'bus-duct', title: 'Bus duct systems', tag: 'ENCLOSED BUSBAR TRUNKING',
     text: 'Enclosed bus duct systems distribute power between electrical equipment and building loads, with connected trunking sections, supported routes and tap-off units matched to the installation.',
     details: ['Busway sections & joints', 'Tap-off units & connections', 'Supports & route installation'],
@@ -91,6 +123,15 @@ export function renderExpertiseServices(runtime, asset) {
               jsx('p', { children: service.text }),
               jsx('ul', { children: service.details.map(detail => jsx('li', { children: detail }, detail)) })
             ] }),
+            service.gallery ? jsxs('details', { className: 'service-gallery', style: { padding: '0 24px 24px' }, children: [
+              jsx('summary', { style: { cursor: 'pointer', padding: '12px 0', fontWeight: 600 }, children: `View more photographs (${service.gallery.length})` }),
+              jsx('div', { style: { display: 'grid', gap: '16px' }, children: service.gallery.map(photo =>
+                jsxs('figure', { style: { margin: 0 }, children: [
+                  jsx('a', { href: asset(photo.image), target: '_blank', rel: 'noopener noreferrer', children: jsx('img', { src: asset(photo.image), alt: photo.alt, loading: 'lazy', decoding: 'async', style: { width: '100%', height: 'auto', display: 'block', borderRadius: '8px' } }) }),
+                  jsx('figcaption', { style: { fontSize: '14px', paddingTop: '8px' }, children: photo.caption })
+                ] }, photo.image)
+              ) })
+            ] }) : null,
             service.hideImage ? null : service.source ? jsxs('div', { className: 'service-photo-credit', children: [
               jsx('span', { children: 'Technical reference photograph' }),
               jsxs('span', { children: [
