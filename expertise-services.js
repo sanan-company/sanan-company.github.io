@@ -31,9 +31,9 @@ export const expertiseServices = [
     id: 'bus-duct', title: 'Bus duct systems', tag: 'ENCLOSED BUSBAR TRUNKING',
     text: 'Enclosed bus duct systems distribute power between electrical equipment and building loads, with connected trunking sections, supported routes and tap-off units matched to the installation.',
     details: ['Busway sections & joints', 'Tap-off units & connections', 'Supports & route installation'],
-    image: 'expertise-bus-duct-v2.webp', width: 1536, height: 1024,
-    alt: 'Enclosed metal busduct route with bolted joints, ceiling supports and a vertical connection to switchgear',
-    caption: 'Enclosed busduct installation', generatedIllustration: true
+    image: 'expertise-bus-duct-v3.webp', width: 1536, height: 1024,
+    alt: 'Compact electrical busbar trunking with bolted joints, a flat end-feed box, suspension rods and a red tap-off unit',
+    caption: 'Busbar trunking & tap-off unit', generatedIllustration: true
   },
   {
     id: 'light-poles', title: 'Light poles', tag: 'OUTDOOR LIGHTING INFRASTRUCTURE',
