@@ -69,11 +69,10 @@ export const expertiseServices = [
     id: 'light-poles', title: 'Light poles', tag: 'OUTDOOR LIGHTING INFRASTRUCTURE',
     text: 'Lighting pole installations for roads, public spaces and facilities, coordinating poles, brackets, luminaires, foundations and electrical connections to suit the location and lighting coverage.',
     details: ['Poles, brackets & luminaires', 'Foundations & mounting', 'Cabling & electrical connections'],
-    image: 'expertise-light-poles.webp', width: 1280, height: 871,
-    alt: 'A twin-arm street-lighting pole with two luminaires viewed against the daytime sky',
-    caption: 'Pole, brackets and luminaires', credit: 'Omoeko Media', license: 'CC BY-SA 4.0',
-    source: 'https://commons.wikimedia.org/wiki/File:Street_light_pole.jpg',
-    licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/'
+    image: 'expertise-light-poles.webp', width: 720, height: 960,
+    alt: 'Modern twin-arm street-lighting poles installed along a road in Sulaymaniyah',
+    caption: 'Street-lighting installation in Sulaymaniyah',
+    fieldPhotoCredit: 'Company-supplied field photo · General Directorate of Electricity – Sulaymaniyah'
   },
   {
     id: 'power-cables', title: 'MV & LV cables', tag: 'POWER CABLE SYSTEMS',
@@ -91,11 +90,11 @@ export const expertiseServices = [
     caption: 'Control cabinet components & wiring', suppliedImage: true
   },
   {
-    id: 'installation', title: 'Electrical installation', tag: 'FROM MOUNTING TO HANDOVER',
-    text: 'Electrical installation brings equipment, cable systems and site connections together, from mounting and containment to wiring, termination and functional checks before handover.',
-    details: ['Equipment mounting & containment', 'Wiring & cable termination', 'Inspection & functional checks'],
+    id: 'installation', title: 'Switchgear Configuration', tag: 'CONFIGURATION & COMMISSIONING',
+    text: 'Switchgear configuration and testing bring control, protection and operating functions together, with equipment checks and functional verification before handover.',
+    details: ['Switchgear configuration', 'Control & protection checks', 'Functional testing & handover'],
     image: '5.webp', width: 960, height: 1280, alt: 'Electrical test equipment set up beside installed switchgear for commissioning checks',
-    caption: 'Switchgear installation and testing', existingPhoto: true
+    caption: 'Switchgear configuration & testing', existingPhoto: true
   }
 ];
 
@@ -139,7 +138,7 @@ export function renderExpertiseServices(runtime, asset) {
                 ' · ',
                 jsx('a', { href: service.licenseUrl, target: '_blank', rel: 'noopener noreferrer', children: service.license })
               ] })
-            ] }) : jsx('div', { className: 'service-photo-credit', children: jsx('span', { children: service.suppliedImage ? 'Supplied product reference' : service.generatedIllustration ? 'AI-generated illustration' : 'Real photograph / in the field' }) })
+            ] }) : jsx('div', { className: 'service-photo-credit', children: jsx('span', { children: service.fieldPhotoCredit || (service.suppliedImage ? 'Supplied product reference' : service.generatedIllustration ? 'AI-generated illustration' : 'Real photograph / in the field') }) })
           ]
         }, service.id)
       ) }),
