@@ -4,11 +4,9 @@ export const expertiseServices = [
     id: 'low-current', title: 'Low-current systems', tag: 'COMMUNICATION, SECURITY & DETECTION',
     text: 'Low-current systems for building communications, security and fire detection, including CCTV, structured networks, television distribution and dedicated fire-alarm equipment.',
     details: ['CCTV surveillance', 'Data networks & TV distribution', 'Fire detection & alarm systems'],
-    image: 'expertise-low-current.webp', width: 960, height: 720,
-    alt: 'Ethernet switches, patch panels and organized network patch cables in a rack',
-    caption: 'Structured network cabling', credit: 'Dsimic', license: 'CC BY-SA 4.0',
-    source: 'https://commons.wikimedia.org/wiki/File:19-inch_rackmount_Ethernet_switches_and_patch_panels.jpg',
-    licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/'
+    image: 'expertise-low-current-v2.webp', width: 1536, height: 1024,
+    alt: 'Low-current systems with CCTV cameras, a fire alarm panel, satellite television distribution equipment and an organized network rack',
+    caption: 'CCTV, fire alarm, satellite & networks', generatedIllustration: true
   },
   {
     id: 'lv', title: 'Low-voltage (LV) systems', tag: 'BUILDING POWER DISTRIBUTION',
