@@ -12,10 +12,10 @@ export const expertiseServices = [
     id: 'lv', title: 'Low-voltage (LV) systems', tag: 'BUILDING POWER DISTRIBUTION',
     text: 'Low-voltage power distribution for buildings and facilities, connecting incoming supplies to distribution boards, lighting circuits and equipment through coordinated wiring, switching and circuit protection.',
     details: ['Main & sub-distribution', 'Lighting & power circuits', 'Earthing & circuit protection'],
-    image: 'expertise-lv.webp', width: 1280, height: 960,
-    alt: 'Enclosed low-voltage main switchboard and distribution panels in a facility',
-    caption: 'LV main and distribution panels', credit: 'Zaereth', license: 'CC BY-SA 4.0',
-    source: 'https://commons.wikimedia.org/wiki/File:Electrical_Main_and_distribution_panel_for_480_volt.JPG',
+    image: 'expertise-lv-modern.webp', width: 1280, height: 960,
+    alt: 'Modern low-voltage main switchboard room with enclosed distribution cabinets and overhead cable trays',
+    caption: 'Modern main switchboard installation', credit: 'Chris Olszewski', license: 'CC BY-SA 4.0',
+    source: 'https://commons.wikimedia.org/wiki/File:Main_Switchboard_room_in_a_moder_building,_2025.jpg',
     licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/'
   },
   {
@@ -91,10 +91,10 @@ export const expertiseServices = [
   },
   {
     id: 'installation', title: 'Switchgear Configuration', tag: 'CONFIGURATION & COMMISSIONING',
-    text: 'Switchgear configuration and testing bring control, protection and operating functions together, with equipment checks and functional verification before handover.',
-    details: ['Switchgear configuration', 'Control & protection checks', 'Functional testing & handover'],
+    text: 'Switchgear configuration brings control, protection and operating functions together, with equipment checks and functional verification before handover.',
+    details: ['Switchgear configuration', 'Control & protection checks', 'Functional verification & handover'],
     image: '5.webp', width: 960, height: 1280, alt: 'Electrical test equipment set up beside installed switchgear for commissioning checks',
-    caption: 'Switchgear configuration & testing', existingPhoto: true
+    caption: 'Switchgear configuration', existingPhoto: true
   }
 ];
 
