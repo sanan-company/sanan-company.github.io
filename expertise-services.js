@@ -19,7 +19,7 @@ export const expertiseServices = [
     licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/'
   },
   {
-    id: 'mv', title: 'Medium-voltage (MV) systems', tag: 'FEEDERS, SWITCHGEAR & SUBSTATIONS',
+    id: 'mv', hideImage: true, title: 'Medium-voltage (MV) systems', tag: 'FEEDERS, SWITCHGEAR & SUBSTATIONS',
     text: 'Medium-voltage infrastructure connecting incoming feeders, switchgear and transformer substations, with equipment installation, cable connections and protection interfaces coordinated around each site.',
     details: ['MV switchgear & feeders', 'Transformer connections', 'Protection & control interfaces'],
     image: '3.webp', width: 1280, height: 960, alt: 'Medium-voltage switchgear lineup with an engineer standing beside the equipment',
@@ -29,9 +29,9 @@ export const expertiseServices = [
     id: 'bus-duct', title: 'Bus duct systems', tag: 'ENCLOSED BUSBAR TRUNKING',
     text: 'Enclosed bus duct systems distribute power between electrical equipment and building loads, with connected trunking sections, supported routes and tap-off units matched to the installation.',
     details: ['Busway sections & joints', 'Tap-off units & connections', 'Supports & route installation'],
-    image: 'expertise-bus-duct-v3.webp', width: 1536, height: 1024,
-    alt: 'Compact electrical busbar trunking with bolted joints, a flat end-feed box, suspension rods and a red tap-off unit',
-    caption: 'Busbar trunking & tap-off unit', generatedIllustration: true
+    image: 'expertise-bus-duct-v3.webp', width: 418, height: 227,
+    alt: 'Electrical busduct with a tap-off switch enclosure and insulated busbar connection',
+    caption: 'Busduct & tap-off switch unit', suppliedImage: true
   },
   {
     id: 'light-poles', title: 'Light poles', tag: 'OUTDOOR LIGHTING INFRASTRUCTURE',
@@ -82,7 +82,7 @@ export function renderExpertiseServices(runtime, asset) {
         jsxs('article', {
           className: `capability capability-service service-${service.id}`, id: `service-${service.id}`,
           children: [
-            jsxs('figure', { className: 'service-photograph', children: [
+            service.hideImage ? null : jsxs('figure', { className: 'service-photograph', children: [
               jsx('img', { src: asset(service.image), alt: service.alt, width: service.width, height: service.height, loading: 'lazy', decoding: 'async' }),
               jsx('span', { className: 'service-number', 'aria-hidden': true, children: String(index + 9).padStart(2, '0') }),
               jsx('figcaption', { children: service.caption })
@@ -93,14 +93,14 @@ export function renderExpertiseServices(runtime, asset) {
               jsx('p', { children: service.text }),
               jsx('ul', { children: service.details.map(detail => jsx('li', { children: detail }, detail)) })
             ] }),
-            service.source ? jsxs('div', { className: 'service-photo-credit', children: [
+            service.hideImage ? null : service.source ? jsxs('div', { className: 'service-photo-credit', children: [
               jsx('span', { children: 'Technical reference photograph' }),
               jsxs('span', { children: [
                 jsx('a', { href: service.source, target: '_blank', rel: 'noopener noreferrer', children: service.credit }),
                 ' · ',
                 jsx('a', { href: service.licenseUrl, target: '_blank', rel: 'noopener noreferrer', children: service.license })
               ] })
-            ] }) : jsx('div', { className: 'service-photo-credit', children: jsx('span', { children: service.generatedIllustration ? 'AI-generated illustration' : 'Real photograph / in the field' }) })
+            ] }) : jsx('div', { className: 'service-photo-credit', children: jsx('span', { children: service.suppliedImage ? 'Supplied product reference' : service.generatedIllustration ? 'AI-generated illustration' : 'Real photograph / in the field' }) })
           ]
         }, service.id)
       ) }),
