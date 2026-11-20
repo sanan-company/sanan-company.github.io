@@ -69,10 +69,10 @@ export const expertiseServices = [
     id: 'light-poles', title: 'Light poles', tag: 'OUTDOOR LIGHTING INFRASTRUCTURE',
     text: 'Lighting pole installations for roads, public spaces and facilities, coordinating poles, brackets, luminaires, foundations and electrical connections to suit the location and lighting coverage.',
     details: ['Poles, brackets & luminaires', 'Foundations & mounting', 'Cabling & electrical connections'],
-    image: 'expertise-light-poles.webp', width: 720, height: 960,
+    image: 'expertise-light-poles-portrait.webp', width: 960, height: 1280,
     alt: 'Modern twin-arm street-lighting poles installed along a road in Sulaymaniyah',
-    caption: 'Street-lighting installation in Sulaymaniyah',
-    fieldPhotoCredit: 'Company-supplied field photo · General Directorate of Electricity – Sulaymaniyah'
+    caption: 'Twin-arm street-lighting pole',
+    fieldPhotoCredit: 'Company-supplied field photograph'
   },
   {
     id: 'power-cables', title: 'MV & LV cables', tag: 'POWER CABLE SYSTEMS',
