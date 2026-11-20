@@ -63,7 +63,7 @@ export const expertiseServices = [
     details: ['Busway sections & joints', 'Tap-off units & connections', 'Supports & route installation'],
     image: 'expertise-bus-duct-v3.webp', width: 418, height: 227,
     alt: 'Electrical busduct with a tap-off switch enclosure and insulated busbar connection',
-    caption: 'Busduct & tap-off switch unit', suppliedImage: true
+    caption: 'Busduct', suppliedImage: true
   },
   {
     id: 'light-poles', title: 'Light poles', tag: 'OUTDOOR LIGHTING INFRASTRUCTURE',
