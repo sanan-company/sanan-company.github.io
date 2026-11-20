@@ -54,11 +54,9 @@ export const expertiseServices = [
     id: 'control-panels', title: 'Electrical control panels', tag: 'SWITCHING, PROTECTION & CONTROL',
     text: 'Electrical control panels bring switching, protection and control components into organized assemblies, with internal wiring, terminals and operating interfaces arranged for the equipment they serve.',
     details: ['Equipment & motor controls', 'Panel wiring & terminals', 'Switches, indicators & interfaces'],
-    image: 'expertise-control-panels.webp', width: 1280, height: 960,
-    alt: 'Industrial control-panel interior with motor control components, wiring ducts and terminals',
-    caption: 'Industrial control-panel components', credit: 'Bridgeland Copyright', license: 'CC BY-SA 3.0',
-    source: 'https://commons.wikimedia.org/wiki/File:Typical_contents_of_a_control_panel_for_automated_equipment.jpg',
-    licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/'
+    image: 'expertise-control-panels.webp', width: 481, height: 353,
+    alt: 'Electrical control cabinet interior showing organized contactors, terminals and power wiring',
+    caption: 'Control cabinet components & wiring', suppliedImage: true
   },
   {
     id: 'installation', title: 'Electrical installation', tag: 'FROM MOUNTING TO HANDOVER',
