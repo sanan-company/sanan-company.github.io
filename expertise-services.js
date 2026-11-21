@@ -12,11 +12,10 @@ export const expertiseServices = [
     id: 'lv', title: 'Low-voltage (LV) systems', tag: 'BUILDING POWER DISTRIBUTION',
     text: 'Low-voltage power distribution for buildings and facilities, connecting incoming supplies to distribution boards, lighting circuits and equipment through coordinated wiring, switching and circuit protection.',
     details: ['Main & sub-distribution', 'Lighting & power circuits', 'Earthing & circuit protection'],
-    image: 'expertise-lv-modern.webp', width: 1280, height: 960,
-    alt: 'Modern low-voltage main switchboard room with enclosed distribution cabinets and overhead cable trays',
-    caption: 'Modern main switchboard installation', credit: 'Chris Olszewski', license: 'CC BY-SA 4.0',
-    source: 'https://commons.wikimedia.org/wiki/File:Main_Switchboard_room_in_a_moder_building,_2025.jpg',
-    licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/'
+    image: 'expertise-lv-professional.webp', width: 1000, height: 667,
+    alt: 'Professional low-voltage switchboard assembly with compartmented circuit breakers and control instruments',
+    caption: 'Low-voltage main switchboard', credit: 'Sial Ingeniería',
+    source: 'https://www.sial-ingenieria.com.ar/proyectos-electricos/tablero-de-baja-tension/schneider-rpb-sa-2950'
   },
   {
     id: 'mv', hideImage: true, title: 'Medium-voltage (MV) systems', tag: 'FEEDERS, SWITCHGEAR & SUBSTATIONS',
@@ -85,9 +84,9 @@ export const expertiseServices = [
     id: 'control-panels', title: 'Electrical control panels', tag: 'SWITCHING, PROTECTION & CONTROL',
     text: 'Electrical control panels bring switching, protection and control components into organized assemblies, with internal wiring, terminals and operating interfaces arranged for the equipment they serve.',
     details: ['Equipment & motor controls', 'Panel wiring & terminals', 'Switches, indicators & interfaces'],
-    image: 'expertise-control-panels.webp', width: 481, height: 353,
+    image: 'expertise-control-professional.webp', width: 1200, height: 900,
     alt: 'Electrical control cabinet interior showing organized contactors, terminals and power wiring',
-    caption: 'Control cabinet components & wiring', suppliedImage: true
+    caption: 'Industrial control panel assembly', credit: 'Nishida Electric Works', source: 'https://www.nishida-denki.net/design/'
   },
   {
     id: 'installation', title: 'Switchgear Configuration', tag: 'CONFIGURATION & COMMISSIONING',
@@ -135,8 +134,8 @@ export function renderExpertiseServices(runtime, asset) {
               jsx('span', { children: 'Technical reference photograph' }),
               jsxs('span', { children: [
                 jsx('a', { href: service.source, target: '_blank', rel: 'noopener noreferrer', children: service.credit }),
-                ' · ',
-                jsx('a', { href: service.licenseUrl, target: '_blank', rel: 'noopener noreferrer', children: service.license })
+                service.license ? ' · ' : null,
+                service.license ? jsx('a', { href: service.licenseUrl, target: '_blank', rel: 'noopener noreferrer', children: service.license }) : null
               ] })
             ] }) : jsx('div', { className: 'service-photo-credit', children: jsx('span', { children: service.fieldPhotoCredit || (service.suppliedImage ? 'Supplied product reference' : service.generatedIllustration ? 'AI-generated illustration' : 'Real photograph / in the field') }) })
           ]

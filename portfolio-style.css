@@ -568,3 +568,29 @@ html[data-theme="dark"] .brand .official-logo { filter:brightness(0) invert(66.6
 .project-building figcaption { padding:12px 16px; color:var(--muted); font-size:11px; line-height:1.6; }
 .project-building figcaption a { color:var(--blue); text-decoration:underline; }
 .school-text-feature > .project-building { margin-top:28px; border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+
+/* Readable editorial engineering insights, with responsive vector diagrams. */
+.insight-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; }
+.insight-card { padding:16px 16px 28px; border-radius:24px; }
+.insight-image { height:auto; aspect-ratio:3/2; padding:0; background:#eff4f1; }
+.insight-image img { display:block; width:100%; height:100%; object-fit:contain; }
+.insight-image > span { display:none; }
+.insight-card h3 { font-size:25px; line-height:1.25; }
+.insight-card p { font-size:15px; line-height:1.75; max-width:55ch; }
+.insight-card small { font-size:10px; font-weight:600; }
+.earthing-guide { margin-top:48px; padding:36px; background:var(--surface); border:1px solid var(--line); border-radius:24px; }
+.earthing-intro h3 { font-size:clamp(25px,3vw,36px); margin:14px 0; }
+.earthing-intro p,.earthing-guide p { color:var(--muted); line-height:1.8; }
+.earthing-principles { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin:30px 0; }
+.earthing-principles article { border-top:2px solid var(--accent); padding-top:20px; }
+.earthing-principles h4 { font-size:19px; margin-bottom:10px; }
+.earthing-principles p { font-size:14px; }
+.earthing-arrangements { border-top:1px solid var(--line); padding:22px 0; }
+.earthing-arrangements summary { cursor:pointer; font-size:18px; color:var(--ink); font-weight:600; }
+.earthing-arrangements table { width:100%; border-collapse:collapse; margin:20px 0; text-align:left; font-size:14px; }
+.earthing-arrangements caption { text-align:left; padding:12px 0; color:var(--muted); }
+.earthing-arrangements th,.earthing-arrangements td { padding:14px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+.earthing-arrangements th { width:110px; color:var(--accent); }
+.earthing-arrangements p { font-size:14px; }
+.earthing-reference { display:inline-block; font-size:12px; line-height:1.7; color:var(--accent); text-decoration:underline; }
+@media(max-width:700px) { .insight-grid { grid-template-columns:1fr; gap:24px; } .insight-card h3 { font-size:24px; } .earthing-guide { padding:24px 20px; } .earthing-principles { grid-template-columns:1fr; gap:22px; } }
